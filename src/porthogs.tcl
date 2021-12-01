@@ -43,7 +43,7 @@ if {$argc eq 0} {
 foreach arg $argv {
     if {$arg in {"" -h -help --help help}} {
         lappend help "🐷 porthogs v$version"
-        lappend help "Find which processes are hogging what ports!"
+        lappend help "Find which processes are hogging what ports."
         lappend help {Usage: porthogs [port numbers...]}
     
         puts stdout [join $help "\n\n"]
