@@ -1,6 +1,6 @@
 # 🐷 porthogs
 
-Find which processes are hogging what ports!
+Find which processes are hogging what ports.
 
 ## Usage
 
