@@ -1,0 +1,17 @@
+#!/usr/bin/env tclsh
+
+set outdir   dist
+set script   [file join src/porthogs.tcl]
+set runtimes [glob [file join lib runtimes *]]
+
+file mkdir $outdir
+
+foreach runtime $runtimes {
+    set script_name [file root [file tail $script]]
+    set output  [file join $outdir "$script_name-[file tail $runtime]"]
+    
+    exec ./lib/tclkit ./lib/sdx qwrap $script -runtime $runtime
+
+    file rename -force $script_name $output
+}
+
